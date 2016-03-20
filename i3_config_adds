@@ -1,0 +1,10 @@
+### MY ADDITIONS ###
+# append to  ~/.i3/config
+
+# Start i3bar to display a workspace bar
+bar {
+        status_command i3status
+}
+
+# set bg image
+exec --no-startup-id feh --bg-scale /home/zunda/Pictures/vim-shortcuts.png
