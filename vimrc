@@ -1,5 +1,3 @@
-" python-centric tab settings
-
 " size of a hard tabstop
 set tabstop=8
 
@@ -13,9 +11,16 @@ set expandtab
 " size of an "indent"
 set shiftwidth=4
 
+" autoindent in block
+filetype indent on
+
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
 
+" set highlighting on explicitly for OS X
+syntax on
+
+" OO
 set background=dark
 
 " colors
