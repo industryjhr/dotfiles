@@ -17,7 +17,7 @@ filetype indent on
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
 
-" set highlighting on explicitly for OS X
+" set explicitly for OS X
 syntax on
 
 " OO
@@ -61,3 +61,6 @@ set statusline=%t%h%m%r%=[%b\ 0x%02B]\ \ \ %l,%c%V\ %P
 set laststatus=2
 " make command line 1 line high
 set cmdheight=1
+
+" press F6 to start a find/replace with word under cursor
+nnoremap <F6> :%s/<C-r><C-w>/
