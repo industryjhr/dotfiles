@@ -1,15 +1,27 @@
-" size of a hard tabstop
-set tabstop=8
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
-" a combination of spaces and tabs are used to simulate tab stops at a width
-" other than the (hard)tabstop
-set softtabstop=0
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 
-" always use spaces instead of tab characters
-set expandtab
+call plug#end()
 
-" size of an "indent"
-set shiftwidth=4
+set encoding=utf-8
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 " size of a hard tabstop
+    \ set softtabstop=0 " 4?
+    \ set shiftwidth=4 " size of an indent
+    "\ set textwidth=79
+    \ set expandtab " always use spaces instead of tab characters
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
 
 " autoindent in block
 filetype indent on
@@ -31,7 +43,7 @@ highlight Constant ctermfg=225
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ " \ze sets end of match so only spaces highlighted
 
-" highlight line 80?
+" highlight line 80
 set colorcolumn=80
 highlight ColorColumn guibg=#2d2d2d ctermbg=246
 
@@ -64,3 +76,15 @@ set cmdheight=1
 
 " press F6 to start a find/replace with word under cursor
 nnoremap <F6> :%s/<C-r><C-w>/
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" code folding
+set foldmethod=indent
+set foldlevel=99
+" enable folding with space bar
+nnoremap <space> za
