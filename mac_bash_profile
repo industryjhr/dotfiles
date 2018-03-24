@@ -1,0 +1,38 @@
+### MY ADDITIONS ###
+### GO
+export GOPATH=~/go
+export GOBIN=${GOPATH}/bin
+export PATH=${GOBIN}:${PATH}
+
+LS_COLORS='di=1;33;'
+export LS_COLORS
+
+##
+##   ALIASES
+##
+alias lst="ls -lth"
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias tree2="tree -L 2"
+alias tree1="tree -L 1"
+
+# projects
+PROJECTS_DIR=~/Projects
+alias work-salesforce="cd $PROJECTS_DIR/salesforce/ && . activate"
+alias work-college411="cd $PROJECTS_DIR/college_411/"
+
+##
+##   BASH PROMPT
+##
+#PS1="\[\033[1;30m\]\t\[\033[m\] \[\033[m\]jhr\[\033[m\]@\[\033[1;30m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+PS1="\[\033[1;30m\]\t\[\033[m\] \[\033[m\]jhr\[\033[m\]@\[\033[1;30m\]\h:\[\033[33;1m\]$(short_pwd)\[\033[m\]\$ "
+PROMPT_COMMAND='PS1="\[\033[1;30m\]\t\[\033[m\] \[\033[m\]jhr\[\033[m\]@\[\033[1;30m\]\h:\[\033[33;1m\]$(short_pwd)\[\033[m\]\$ "'
+#PROMPT_COMMAND='PS1="\[\033[1;30m\]\t\[\033[m\] :\[\033[33;1m\]$(short_pwd)\[\033[m\]\$ "'
+#PS1="[\t \u@\H:\w]$ "
+
+### Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+PATH="/Users/jravesloot/Library/Python/3.6/bin:${PATH}"
+export PATH
